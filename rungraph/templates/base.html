@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--[if IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8 o-browser"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie10 lt-ie9 o-browser"><![endif]-->
+<!--[if IE 9]><html class="no-js lt-ie10 m-browser"><![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js m-browser"><!--<![endif]-->
+{% spaceless %}
+<head>
+<title>{% block title %} {%if title %} {{title}}%} {% else %}
+	Runkeeper Test{%endif%} {% endblock %}</title> 
+{% block header_meta %}
+{%endblock %}
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="google" value="notranslate" content="notranslate"/>
+{% for c in css %}
+<link rel="stylesheet" type="text/css" href="{{c}}" />
+{% endfor %} {% block page_css%} {%endblock %}
+
+{% for j in js %}
+<script type="text/javascript" src="{{j}}"></script>
+{% endfor %} {% block extra_head %} {% endblock %}
+</head>
+
+<body>		
+	{% block header %} {% endblock %}
+	 {% block main_body %} {% endblock %}	 
+	{% block footer_block %} {% endblock %}	
+</body>
+</html>
+{% endspaceless %}

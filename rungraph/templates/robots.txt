@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /async/
+
+User-agent: discobot
+Disallow: / 
