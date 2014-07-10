@@ -1,0 +1,65 @@
+{% extends 'PLanding.html' %}
+
+{% block main_body %}        
+        <div align="center" style="width:100%;">
+        <div align="center" style="width:720px;display:inline-block;">
+            <h1>HealthGraph-API Demo</h1>
+            <p align="center">
+                <img src="{{ profile.normal_picture }}" alt="Profile Picture"><br>
+            </p>
+            <p>
+                <b>{{ profile.name }}</b><br>
+                {{ profile.athlete_type }}
+                from
+                {{ profile.location }}
+            </p>
+            <p align="center">
+                <h2>Recent Activities</h2>  
+                <table border=1>
+                    <thead>
+                        <th>Date / Time</th>
+                        <th>Sport</th>
+                        <th>Distance (km)</th>
+                    </thead>
+                    <tbody>
+                        {% for stats in activities%}
+                        <tr>
+                            <td>{{ stats.start_time }}</td>
+                            <td>{{ stats.type }}</td>
+                            <td align="right">{{ stats.total_distance }}</td>
+                        </tr>
+                        {%endfor%}        
+                    </tbody>
+                </table>
+            </p>
+            <p align="center">
+                <h2>Total Distance</h2> 
+                <table border=1>
+                    <thead>
+                        <th>Sport</th>
+                        <th>This Week<br>(km)</th>
+                        <th>Last Week<br>(km)</th>
+                        <th>This Month<br>(km)</th>
+                        <th>Last Month<br>(km)</th>
+                        <th>Overall<br>(km)</th>
+                    </thead>
+                    <tbody>
+                        {% for sport, stats in records.items %}
+                        <tr>
+                            <td>{{ sport }}</td>
+                            <td align="right">{{ stats.THIS_WEEK }}</td>
+                            <td align="right">{{ stats.LAST_WEEK }}</td>
+                            <td align="right">{{ stats.THIS_MONTH }}</td>
+                            <td align="right">{{ stats.LAST_MONTH }}</td>
+                            <td align="right">{{ stats.OVERALL }}</td>
+                        </tr>
+                        {%endfor%}        
+                    </tbody>
+                </table>
+            </p>
+            <p>
+                <a href="/logout">Logout</a>
+            </p>
+        </div>
+        </div>
+{% endblock %}

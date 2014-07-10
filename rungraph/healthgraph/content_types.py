@@ -1,20 +1,4 @@
-"""Python Client Library for Health Graph API (http://developer.runkeeper.com/healthgraph). 
 
-The API is used for accessing RunKeeper (http://runkeeper.com) for retrieving, 
-updating, deleting and uploading Fitness Activity and Health Measurements Information.
-
-This module contains the definitions for Content Types used by Health Graph API.
-
-"""
-
-
-__author__ = "Ali Onur Uyar"
-__copyright__ = "Copyright 2012, Ali Onur Uyar"
-__credits__ = []
-__license__ = "GPL"
-__version__ = "0.3.0"
-__email__ = "aouyar at gmail.com"
-__status__ = "Development"
 
     
 USER = 'User'
