@@ -52,7 +52,7 @@ class WelcomePageView(View):
                                                    'records': records.get_totals(),
                                                   })
         else:
-            redirect(reverse('main_welcome_page')) 
+            redirect(reverse('main_landing_page')) 
 
 class LogoutPageView(View):   
     
